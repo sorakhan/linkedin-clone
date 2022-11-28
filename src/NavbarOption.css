@@ -1,0 +1,15 @@
+.navbarOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: grey;
+}
+
+.navbarOption .navbarOption__title {
+  font-size: 12px;
+}
+
+.navbarOption:hover {
+  cursor: pointer;
+  color: black;
+}

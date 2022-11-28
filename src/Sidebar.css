@@ -1,0 +1,157 @@
+.sidebar__recent h3,
+.sidebar__groups h3 {
+  margin: 15px 10px 10px;
+}
+
+.sidebar__recent h3 {
+  font-weight: normal;
+}
+
+.sidebar__top,
+.sidebar__bottom {
+  /* TODO: To be shared */
+  border-radius: 10px;
+  border: var(--border);
+  background-color: white;
+}
+
+.sidebar {
+  flex: 0.2;
+  min-width: 200px;
+  font-size: 0.8rem;
+}
+
+.sidebar__image {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: -55px;
+}
+
+.sidebar__header,
+.sidebar__stats,
+.sidebar__plan {
+  border-bottom: var(--border);
+}
+
+.sidebar__header {
+  text-align: center;
+  padding: 15px;
+}
+
+.sidebar__header h2 {
+  margin: 15px 0 5px;
+}
+
+.sidebar__avatar {
+  margin: auto;
+  border: 2px solid white;
+}
+
+.sidebar__stats,
+.sidebar__bookmarks,
+.sidebar__plan a {
+  font-weight: bold;
+}
+
+.sidebar__stats {
+  color: var(--grey);
+}
+
+.sidebar__bookmarks {
+  color: var(--lightGrey);
+}
+
+.sidebar__bookmarks p,
+.sidebar__plan a {
+  color: black;
+  margin-left: 5px;
+}
+
+.sidebar__stat {
+  padding: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sidebar__stat .right {
+  float: right;
+  color: var(--primary-color);
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__stat:hover,
+.sidebar__plan:hover,
+.sidebar__bookmarks:hover,
+.sidebar__item:hover {
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
+.sidebar__stat,
+.sidebar__plan,
+.sidebar__bookmarks,
+.sidebar__item {
+  padding: 10px;
+}
+
+/* shared */
+
+.blue {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.blue:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Bottom sidebar */
+.sidebar__bottom {
+  margin-top: 10px;
+  position: sticky;
+  top: 80px;
+}
+
+.sidebar__item {
+  display: flex;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-weight: bold;
+  color: var(--lightGrey);
+  align-items: center;
+}
+
+.sidebar__icon {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.sidebar__item > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__item:hover > p {
+  color: black;
+}
+
+.sidebar__discover {
+  border-top: var(--border);
+  padding: 0.8rem;
+  margin-top: 15px;
+}
+
+.sidebar__discover h2 {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--lightGrey);
+}

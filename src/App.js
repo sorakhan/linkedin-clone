@@ -1,56 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Feed from "./Feed";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import SideInfo from "./SideInfo";
 
 function App() {
+  const profilePic =
+    "https://www.sorakhan.com/static/4836a448a98a0d70358f2839834bd95e/907bc/sora.webp";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className="app">
+      <Navbar profilePic={profilePic} />
+      <div className="app__body">
+        <Sidebar profilePic={profilePic} />
+        <Feed profilePic={profilePic} />
+        <SideInfo />
+      </div>
     </div>
   );
 }

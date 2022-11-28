@@ -1,0 +1,32 @@
+.feed {
+  flex: 0.5;
+}
+
+.feed .feed__inputContainer {
+  padding: 10px;
+
+  /* TODO: To be shared */
+  border-radius: 10px;
+  border: var(--border);
+  background-color: white;
+}
+
+form {
+  display: flex;
+  column-gap: 10px;
+}
+
+form > input {
+  width: 90%;
+  border: 1px solid #dedede;
+  border-radius: 2em;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.feed__options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}

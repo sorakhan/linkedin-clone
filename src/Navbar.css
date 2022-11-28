@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 0;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar__left {
+  display: flex;
+  height: 40px;
+}
+
+.navbar__left img {
+  object-fit: contain;
+}
+
+.navbar__search {
+  display: flex;
+  align-items: center;
+  background-color: #eef3f8;
+  color: grey;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.navbar__search input {
+  border: none;
+  outline: none; /* removes outline when focused */
+  background: none;
+}
+
+.navbar__right {
+  display: flex;
+  column-gap: 20px;
+}

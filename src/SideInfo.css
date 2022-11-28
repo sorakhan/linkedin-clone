@@ -1,0 +1,33 @@
+.sideInfo {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.sideInfo > div {
+  /* TODO: To be shared */
+  border-radius: 10px;
+  border: var(--border);
+  background-color: white;
+  /* height: 200px; */
+  padding: 10px;
+}
+
+.sideInfo__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.sideInfo__list {
+  padding: 10px 12px;
+}
+
+ul.sideInfo__list > li .sideInfo__title {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+ul.sideInfo__list > li .sideInfo__info {
+  margin: 5px 0 10px;
+}

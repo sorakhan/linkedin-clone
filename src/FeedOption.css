@@ -1,0 +1,25 @@
+
+
+.feedOption,
+.feedOption__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedOption {
+  font-weight: bold;
+  color: var(--lightGrey);
+  padding: 12px 5px;
+  transition: 0.2s;
+}
+
+.feedOption:hover {
+  background-color: #ebebeb;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feedOption__icon {
+  margin-right: 10px;
+}

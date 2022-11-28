@@ -1,0 +1,54 @@
+.post {
+  margin-top: 10px;
+  padding: 10px;
+
+  /* TODO: To be shared */
+  border-radius: 10px;
+  border: var(--border);
+  background-color: white;
+}
+
+.post__header {
+  display: flex;
+  align-items: center;
+}
+
+.post__userInfo {
+  margin-left: 10px;
+}
+
+.post__userInfo h2 {
+  font-size: 0.95rem;
+}
+
+.feed__postSubtitle {
+  display: flex;
+  align-items: center;
+}
+
+.post__content {
+  margin-top: 1rem;
+}
+
+.post__content p {
+  /* overflow-wrap: anywhere; */
+  line-height: 1.3rem;
+  font-size: 0.9rem;
+}
+
+.post__icons {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: var(--border);
+  margin-top: 10px;
+}
+
+.post__icons > * {
+  width: 100%;
+}
+
+/* possibly to be shared */
+.smallIcon {
+  font-size: 1rem !important;
+  color: grey;
+}
