@@ -48,18 +48,22 @@ function Feed({ profilePic }) {
     }
 
     fetchData();
+    // useEffect only called when this component is rendered the first time due to providing a 2nd argument
   }, []);
 
   const createPost = async (e) => {
     e.preventDefault();
     try {
+      // Add document to Firestore
       const postsCollection = collection(getFirestore(app), "posts");
       const docRef = await addDoc(postsCollection, {
         author: "Sora Khan",
         message: input,
         photoUrl: "",
+        // using serverTimestamp allows to save the same time to db no matter what part of the world user is located
         timestamp: serverTimestamp(),
       });
+      // Clear input text
       setInput("");
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
