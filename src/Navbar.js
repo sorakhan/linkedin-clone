@@ -8,8 +8,20 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import TextsmsIcon from "@mui/icons-material/Textsms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { useDispatch } from "react-redux";
+import { logout } from "./features/userSlice";
+import { getAuth, signOut } from "firebase/auth";
 
-function Navbar({profilePic}) {
+function Navbar({ profilePic }) {
+  const dispatch = useDispatch();
+  const signOutOfApp = () => {
+    // Sign out of firebase Auth
+    signOut(getAuth()).then(() => {
+      // Changes state to logged out. Clears user data in Redux Data Layer
+      dispatch(logout());
+    });
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -29,10 +41,7 @@ function Navbar({profilePic}) {
         <NavbarOption Icon={BusinessCenterIcon} title="Jobs" />
         <NavbarOption Icon={TextsmsIcon} title="Messaging" />
         <NavbarOption Icon={NotificationsIcon} title="Notifications" />
-        <NavbarOption
-          avatar={profilePic}
-          title="Me"
-        />
+        <NavbarOption avatar={profilePic} title="Me" onClick={signOutOfApp} />
       </div>
     </div>
   );

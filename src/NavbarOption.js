@@ -2,10 +2,10 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import "./NavbarOption.css";
 
-function NavbarOption({ avatar, Icon, title }) {
+function NavbarOption({ avatar, Icon, title, onClick }) {
   // Icon is capital because we are passing in a component
   return (
-    <div className="navbarOption">
+    <div className="navbarOption" onClick={onClick}>
       {Icon && <Icon />}
       {avatar && (
         <Avatar

@@ -6,6 +6,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { login } from "./features/userSlice";
@@ -16,6 +17,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const dispatch = useDispatch();
+  const auth = getAuth();
 
   const toggleForm = (e) => {
     e.preventDefault();
@@ -24,22 +26,35 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
-    console.log("logging in");
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        // Push user data to redux data layer store
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            userId: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+          })
+        );
+      })
+      .catch((e) => {
+        alert(`${e.message}`);
+      });
   };
+
   const signUp = (e) => {
     e.preventDefault();
-    console.log("signing up");
-    createUserWithEmailAndPassword(getAuth(), email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
         updateProfile(userAuth.user, { displayName: userName }).then(() => {
           // Push user data to redux data layer store
-          console.log(dispatch(
+          dispatch(
             login({
               email: userAuth.user.email,
               userId: userAuth.user.uid,
               displayName: userAuth.user.displayName,
             })
-          ));
+          );
         });
       })
       .catch((e) => {
