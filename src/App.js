@@ -14,14 +14,16 @@ function App() {
     "https://www.sorakhan.com/static/4836a448a98a0d70358f2839834bd95e/907bc/sora.webp";
   return (
     <div className="app">
-      <Navbar profilePic={profilePic} />
       {!user ? (
         <Login />
       ) : (
-        <div className="app__body">
-          <Sidebar profilePic={profilePic} />
-          <Feed profilePic={profilePic} />
-          <SideInfo />
+        <div>
+          <Navbar profilePic={profilePic} />
+          <div className="app__body">
+            <Sidebar profilePic={profilePic} />
+            <Feed profilePic={profilePic} />
+            <SideInfo />
+          </div>
         </div>
       )}
     </div>
