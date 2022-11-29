@@ -20,6 +20,7 @@ import {
 } from "firebase/firestore";
 import { selectUser } from "./features/userSlice";
 import { useSelector } from "react-redux";
+import FlipMove from "react-flip-move";
 
 function Feed() {
   const user = useSelector(selectUser);
@@ -107,17 +108,19 @@ function Feed() {
       </div>
 
       <div className="feed__post">
-        {posts.map(
-          ({ id, data }) =>
-            id && ( // no longer have errors by adding this line.. basically ensures everything is loaded first
-              <Post
-                key={id}
-                name={data?.author}
-                message={data?.message}
-                photoUrl={data?.photoUrl}
-              />
-            )
-        )}
+        <FlipMove>
+          {posts.map(
+            ({ id, data }) =>
+              id && ( // no longer have errors by adding this line.. basically ensures everything is loaded first
+                <Post
+                  key={id}
+                  name={data?.author}
+                  message={data?.message}
+                  photoUrl={data?.photoUrl}
+                />
+              )
+          )}
+        </FlipMove>
       </div>
     </div>
   );

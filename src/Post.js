@@ -7,10 +7,11 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import InsertCommentOutlinedIcon from "@mui/icons-material/InsertCommentOutlined";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import SendIcon from "@mui/icons-material/Send";
+import { forwardRef } from "react";
 
-function Post({ name, profilePic, message }) {
+const Post = forwardRef(({ name, profilePic, message }, ref) => {
   return (
-    <div className="post">
+    <div ref={ref} className="post">
       <div className="post__header">
         <Avatar
           src={profilePic}
@@ -43,6 +44,6 @@ function Post({ name, profilePic, message }) {
       </div>
     </div>
   );
-}
+});
 
 export default Post;
