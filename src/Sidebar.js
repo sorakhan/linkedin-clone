@@ -3,14 +3,18 @@ import React from "react";
 import "./Sidebar.css";
 import SquareIcon from "@mui/icons-material/Square";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import { selectUser } from "./features/userSlice";
+import { useSelector } from "react-redux";
 
 function Sidebar({ profilePic }) {
+  const user = useSelector(selectUser);
   const recentItem = (topic) => (
     <div className="sidebar__item">
       <div className="sidebar__icon">#</div>
       <p>{topic}</p>
     </div>
   );
+
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -22,11 +26,14 @@ function Sidebar({ profilePic }) {
         <div className="sidebar__header">
           <Avatar
             className="sidebar__avatar"
-            src={profilePic}
+            src={user.profilePic}
             alt="profile picture"
             sx={{ width: 70, height: 70 }}
-          />
-          <h2>Sora Khan</h2>
+          >
+            {/* Shows name's initial if no images */}
+            {user.displayName[0].toUpperCase()}
+          </Avatar>
+          <h2>{user.displayName}</h2>
           <p className="sidebar__position subtitle">
             Full Stack Developer and UI/UX Designer for Web &amp; Mobile
           </p>

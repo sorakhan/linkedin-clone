@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { logout } from "./features/userSlice";
 import { getAuth, signOut } from "firebase/auth";
 
-function Navbar({ profilePic }) {
+function Navbar() {
   const dispatch = useDispatch();
   const signOutOfApp = () => {
     // Sign out of firebase Auth
@@ -41,7 +41,7 @@ function Navbar({ profilePic }) {
         <NavbarOption Icon={BusinessCenterIcon} title="Jobs" />
         <NavbarOption Icon={TextsmsIcon} title="Messaging" />
         <NavbarOption Icon={NotificationsIcon} title="Notifications" />
-        <NavbarOption avatar={profilePic} title="Me" onClick={signOutOfApp} />
+        <NavbarOption title="Me" onClick={signOutOfApp} />
       </div>
     </div>
   );

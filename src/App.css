@@ -7,8 +7,10 @@ html {
 
 .app__body {
   display: flex;
-  justify-content: space-evenly;
   column-gap: 20px;
+  margin-top: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 a {

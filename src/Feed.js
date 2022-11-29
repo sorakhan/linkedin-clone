@@ -18,8 +18,11 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
+import { selectUser } from "./features/userSlice";
+import { useSelector } from "react-redux";
 
-function Feed({ profilePic }) {
+function Feed() {
+  const user = useSelector(selectUser);
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([<Post />]);
 
@@ -57,9 +60,9 @@ function Feed({ profilePic }) {
       // Add document to Firestore
       const postsCollection = collection(getFirestore(app), "posts");
       const docRef = await addDoc(postsCollection, {
-        author: "Sora Khan",
+        author: user.displayName,
         message: input,
-        photoUrl: "",
+        photoUrl: user.photoUrl ?? "",
         // using serverTimestamp allows to save the same time to db no matter what part of the world user is located
         timestamp: serverTimestamp(),
       });
@@ -76,10 +79,13 @@ function Feed({ profilePic }) {
       <div className="feed__inputContainer">
         <form onSubmit={createPost}>
           <Avatar
-            src={profilePic}
+            src={user.profilePic}
             alt="profile picture"
             sx={{ width: 50, height: 50 }}
-          />
+          >
+            {/* Shows name's initial if no images */}
+            {user.displayName[0].toUpperCase()}
+          </Avatar>
           <input
             type="text"
             placeholder="Start a post"

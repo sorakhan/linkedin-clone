@@ -16,7 +16,10 @@ function Post({ name, profilePic, message }) {
           src={profilePic}
           alt="profile picture"
           sx={{ width: 50, height: 50 }}
-        />
+        >
+          {/* Shows name's initial if no images */}
+          {name[0].toUpperCase()}
+        </Avatar>
         <div className="post__userInfo">
           <h2>{name}</h2>
           <p className="subtitle">Recruitment Consultant</p>

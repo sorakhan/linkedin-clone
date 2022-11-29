@@ -13,8 +13,8 @@ import SideInfo from "./SideInfo";
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const profilePic =
-    "https://www.sorakhan.com/static/4836a448a98a0d70358f2839834bd95e/907bc/sora.webp";
+  // const profilePic =
+  //   "https://www.sorakhan.com/static/4836a448a98a0d70358f2839834bd95e/907bc/sora.webp";
 
   useEffect(() => {
     const auth = getAuth();
@@ -41,10 +41,10 @@ function App() {
         <Login />
       ) : (
         <div>
-          <Navbar profilePic={profilePic} />
+          <Navbar />
           <div className="app__body">
-            <Sidebar profilePic={profilePic} />
-            <Feed profilePic={profilePic} />
+            <Sidebar />
+            <Feed />
             <SideInfo />
           </div>
         </div>
