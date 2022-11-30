@@ -13,6 +13,7 @@
 .navbar__left {
   display: flex;
   height: 40px;
+  width: 50%;
 }
 
 .navbar__left img {
@@ -26,6 +27,7 @@
   color: grey;
   padding: 10px;
   margin-left: 10px;
+  width: 50%;
 }
 
 .navbar__search input {

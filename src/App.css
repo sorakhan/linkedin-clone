@@ -1,16 +1,23 @@
 html {
   --primary-color: #0077b5;
   --grey: #313335;
-  --lightGrey: #4f4f4f;
+  --lightGrey: #7f7f7f;
   --border: 1px solid #eeeeee;
+}
+
+.app {
+  width: 100%;
+}
+
+.body__container {
+  display: flex;
+  justify-content: center;
 }
 
 .app__body {
   display: flex;
-  column-gap: 20px;
+  justify-content: space-evenly;
   margin-top: 2rem;
-  margin-left: 10rem;
-  margin-right: 10rem;
 }
 
 a {
@@ -24,4 +31,31 @@ input[type="submit"] {
   color: whitesmoke;
   margin-top: 2rem;
   font-size: 1.2rem;
+}
+
+.app__sidebar {
+  flex: 0.8;
+}
+
+@media screen and (max-width: 1024px) {
+  .app__side {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app__body {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app__feed {
+    margin: 2rem 0;
+  }
+
+  .app__sidebar,
+  .app__feed {
+    width: 90%;
+  }
 }

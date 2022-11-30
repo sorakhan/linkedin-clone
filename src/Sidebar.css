@@ -16,8 +16,8 @@
 }
 
 .sidebar {
-  flex: 0.2;
-  min-width: 200px;
+  /* flex: 0.2; */
+  /* min-width: 200px; */
   font-size: 0.8rem;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .sidebar__stats {
-  color: var(--grey);
+  color: var(--lightGrey);
 }
 
 .sidebar__bookmarks {

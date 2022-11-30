@@ -40,12 +40,20 @@ function App() {
       {!user ? (
         <Login />
       ) : (
-        <div>
+        <div className="app__container">
           <Navbar />
-          <div className="app__body">
-            <Sidebar />
-            <Feed />
-            <SideInfo />
+          <div className="body__container">
+            <div className="app__body">
+              <div className="app__sidebar">
+                <Sidebar />
+              </div>
+              <div className="app__feed">
+                <Feed />
+              </div>
+              <div className="app__side">
+                <SideInfo />
+              </div>
+            </div>
           </div>
         </div>
       )}

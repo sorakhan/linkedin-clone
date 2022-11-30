@@ -43,9 +43,9 @@ function SideInfo() {
         </ul>
       </div>
 
-      <div className="sideInfo__ads"></div>
+      {/* <div className="sideInfo__ads"></div> */}
 
-      <div className="sideInfo__extra"></div>
+      {/* <div className="sideInfo__extra"></div> */}
     </div>
   );
 }

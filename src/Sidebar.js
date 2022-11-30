@@ -48,13 +48,13 @@ function Sidebar({ profilePic }) {
           </p>
         </div>
 
-        <div className="sidebar__plan">
+        {/* <div className="sidebar__plan">
           <p className="subtitle">Achieve your goals faster</p>
           <div className="icon-link">
             <SquareIcon />
             <a href="http://google.com">Upgrade my plan</a>
           </div>
-        </div>
+        </div> */}
 
         <div className="sidebar__bookmarks">
           <div className="icon-link">
